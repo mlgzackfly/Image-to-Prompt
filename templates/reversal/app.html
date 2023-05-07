@@ -35,22 +35,46 @@
 <div class="ts-space is-big"></div>
 <div class="ts-grid">
     <div class="column is-8-wide">
-        <div class="ts-box is-hollowed">
-            <div class="ts-content is-vertically-padded">
-                <input type="file" id="image-upload" name="image" style="display:none">
-                <div class="ts-center">
-                    <div class="ts-icon is-disabled is-heading is-upload-icon"></div>
-                    <div class="ts-space"></div>
-                    <div class="ts-header is-secondary">上傳圖片</div>
-                    <div class="ts-text is-secondary">將圖片拖拉至此處進行上傳</div>
-                </div>
+
+{#        <div class="ts-box is-hollowed">#}
+{#            <div class="ts-content is-vertically-padded">#}
+{#                <input type="file" id="image-upload" name="image" style="display:none">#}
+{#                <div class="ts-center">#}
+{#                    <div class="ts-icon is-disabled is-heading is-upload-icon"></div>#}
+{#                    <div class="ts-space"></div>#}
+{#                    <div class="ts-header is-secondary">上傳圖片</div>#}
+{#                    <div class="ts-text is-secondary">將圖片拖拉至此處進行上傳</div>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="ts-file">
+                <input type="file" name="upload" accept="image/*">
             </div>
+                <br>
+                <button class="ts-button" type="submit">上傳</button>
+          </form>
+        <div class="row">
+            {% if file_url %}
+            <div class="ts-image is-small">
+              <img src="{{ file_url }}">
+            </div>
+            {% endif %}
         </div>
     </div>
     <div class="column is-6-wide">
         <div class="ts-header is-heavy">Prompt</div>
         <div class="ts-divider"></div>
-        <span class="ts-text">這邊會顯示咒語</span>
+
+        {% if prompt %}
+            <div class="ts-image is-small">
+            <span class="ts-text">{{ prompt }}</span>
+            </div>
+        {% else %}
+            <span class="ts-text">這邊會顯示咒語</span>
+        {% endif %}
     </div>
 </div>
 
