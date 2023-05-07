@@ -20,9 +20,9 @@
 <div class="ts-content is-secondary is-fitted">
     <div class="ts-container is-narrow">
         <div class="ts-tab">
-            <a href="index" class="item">首頁</a>
-            <a href="app" class="item is-active">開始使用</a>
-            <a href="about" class="item">關於</a>
+            <a href="{% url 'reversal:index' %}" class="item">首頁</a>
+            <a href="{% url 'reversal:app' %}" class="item is-active">開始使用</a>
+            <a href="{% url 'reversal:about' %}" class="item">關於</a>
         </div>
     </div>
 </div>
