@@ -31,15 +31,22 @@
 <div class="ts-divider"></div>
 <div class="ts-space is-big"></div>
 
-<div class="ts-header is-heavy">關於</div>
 
-<div class="ts-segment">
+<div class="ts-container is-narrow">
+<div class="ts-header is-heavy">關於</div>
+    <div class="ts-box">
+
+<div class="ts-content">
     <p class="ts-text">
         近年來，隨著人工智慧技術的發展，透過文字提示生成圖片的方法愈加普及。這些生成的圖片十分出色，但若要進一步了解圖片生成的過程，是否能夠從圖片出發反推出對應的文字提示呢？
     </p>
     <p class="ts-text">
         這是一個圖片反向搜尋的程式，使用 DiffusionDB 2M 儲存圖片的嵌入向量，透過比對與使用者輸入的圖片，找到最相似的圖片。透過讀取儲存於資料庫中的圖片嵌入向量資料框，使用 cosine similarity 計算所有圖片與使用者輸入的圖片的相似度，取前 20 相似度最高的圖片並顯示相應的圖片 ID、相似度和文字提示做進一步的估計。
     </p>
+</div>
+    <div class="symbol">
+        <span class="ts-icon is-circle-info-icon"></span>
+    </div>
 </div>
 
 <div class="ts-space is-large"></div>
@@ -105,7 +112,7 @@
             </div>
         </div>
     </div>
-</div>
+</div></div>
 
 
 <div class="ts-space is-big"></div>
