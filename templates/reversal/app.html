@@ -33,8 +33,10 @@
 </div>
 <div class="ts-divider"></div>
 <div class="ts-space is-big"></div>
+<div class="ts-container is-narrow">
+
 <div class="ts-grid">
-    <div class="column is-8-wide">
+    <div class="column is-4-wide">
 
 {#        <div class="ts-box is-hollowed">#}
 {#            <div class="ts-content is-vertically-padded">#}
@@ -56,15 +58,20 @@
                 <br>
                 <button class="ts-button" type="submit">上傳</button>
           </form>
+    </div>
+    <div class="column is-8-wide">
+    <div class="ts-wrap is-center-aligned">
+
         <div class="row">
             {% if file_url %}
-            <div class="ts-image is-large">
+            <div class="ts-image is-medium">
               <img src="{{ file_url }}">
             </div>
             {% endif %}
         </div>
     </div>
-    <div class="column is-6-wide">
+    </div>
+    <div class="column is-4-wide">
         <div class="ts-header is-heavy">Prompt</div>
         <div class="ts-divider"></div>
 
@@ -77,7 +84,7 @@
         {% endif %}
     </div>
 </div>
-
+</div>
 
 <div class="ts-space is-huge"></div>
 <div class="ts-space is-huge"></div>
