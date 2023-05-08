@@ -3,6 +3,7 @@ import time
 from django.shortcuts import render
 from django.core.files.storage import FileSystemStorage
 from . import similarity
+import urllib.parse
 
 def index(request):
     return render(request, 'reversal/index.html')
@@ -15,7 +16,7 @@ def app(request):
         file = fss.save(upload.name, upload)
         while not fss.exists(file):
             time.sleep(1)  # 等待文件保存
-        file_url = fss.url(file)
+        file_url = urllib.parse.unquote(fss.url(file))
         prompt = ""
         query_image_id = file_url # 圖片位置
         top_k = 20 # 搜尋前幾名
