@@ -77,7 +77,12 @@
 
         {% if status %}
             <div class="ts-image is-small">
+            <p>
             <span class="ts-text">{{ prompt }}</span>
+            </p>
+            <p>
+                <span class="ts-text">相似度：{{ similarity }} %</span>
+            </p>
             </div>
         {% else %}
             <span class="ts-text">這邊會顯示咒語</span>
