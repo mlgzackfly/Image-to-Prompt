@@ -63,7 +63,7 @@
     <div class="ts-wrap is-center-aligned">
 
         <div class="row">
-            {% if file_url %}
+            {% if status %}
             <div class="ts-image is-medium">
               <img src="{{ file_url }}">
             </div>
@@ -75,7 +75,7 @@
         <div class="ts-header is-heavy">Prompt</div>
         <div class="ts-divider"></div>
 
-        {% if prompt %}
+        {% if status %}
             <div class="ts-image is-small">
             <span class="ts-text">{{ prompt }}</span>
             </div>
