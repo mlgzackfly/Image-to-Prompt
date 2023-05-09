@@ -44,7 +44,7 @@ def predict(image_path, model_path, model_name, input_size):
     model.to(device)
     model.eval()
 
-    image = Image.open(image_path)
+    image = Image.open(image_path).convert('RGB')
 
     # 裁剪圖像以使所有圖像具有相同的形狀
     w, h = image.size
