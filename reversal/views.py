@@ -1,11 +1,8 @@
 # Create your views here.
 import base64
-import time
 import tempfile
 from django.shortcuts import render
-from django.core.files.storage import FileSystemStorage
 from . import similarity
-import urllib.parse
 
 def index(request):
     return render(request, 'reversal/index.html')
