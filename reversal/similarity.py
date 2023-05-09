@@ -74,7 +74,7 @@ def get_similar_images(query_image_id, top_k):
     db = pd.read_csv('reversal/db.csv')
 
     # 取得查詢圖像的嵌入向量
-    query_image_path = f".{query_image_id}"
+    query_image_path = f"{query_image_id}"
     query_embedding = predict(query_image_path, CFG.model_path, CFG.model_name, CFG.input_size)
 
     # 正規化特徵向量
