@@ -1,5 +1,6 @@
 # Create your views here.
 import time
+import tempfile
 from django.shortcuts import render
 from django.core.files.storage import FileSystemStorage
 from . import similarity
@@ -14,11 +15,9 @@ def app(request):
         upload = request.FILES['upload']
         if not upload.name.endswith('.png'):
             return render(request, 'reversal/app.html',{'status' : False, 'message' : '只能上傳副檔名為 png 的圖片'})
-        fss = FileSystemStorage()
-        file = fss.save(upload.name, upload)
-        while not fss.exists(file):
-            time.sleep(1)  # 等待文件保存
-        file_url = urllib.parse.unquote(fss.url(file))
+        with tempfile.NamedTemporaryFile(delete=False) as temp_file:
+            temp_file.write(upload.read())
+        file_url = temp_file.name
         prompt = ""
         query_image_id = file_url # 圖片位置
         top_k = 20 # 搜尋前幾名
