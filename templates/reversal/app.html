@@ -103,29 +103,34 @@
 <div class="ts-space is-big"></div>
 
                 {% if status %}
-  <div class="ts-grid is-5-columns">
+<div class="ts-container is-narrow">
+  <div class="ts-grid is-5-columns is-relaxed">
     {% for img,p in img_prompts %}
       {% if forloop.counter0|divisibleby:5 %}
         </div>
+          <div class="ts-space"></div>
         <div class="ts-grid is-5-columns">
       {% endif %}
       <div class="column">
         <div class="ts-box">
-          <div class="ts-image">
+          <div class="ts-image is-small">
             <img src="/static/images/kaggle/{{ img }}.png">
           </div>
-          <div class="ts-content">{{ p }}</div>
+          <div class="ts-content">
+              <p>{{ p }}</p>
+          </div>
         </div>
       </div>
     {% endfor %}
   </div>
+</div>
 {% endif %}
 
 </div>
 
-<div class="ts-space is-huge"></div>
-<div class="ts-space is-huge"></div>
-<div class="ts-space is-huge"></div>
+{#<div class="ts-space is-huge"></div>#}
+{#<div class="ts-space is-huge"></div>#}
+{#<div class="ts-space is-huge"></div>#}
 <div class="ts-divider"></div>
 <div class="ts-content is-vertically-very-padded">
     <div class="ts-container is-narrow">
