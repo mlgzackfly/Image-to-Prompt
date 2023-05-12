@@ -65,7 +65,7 @@
         <div class="row">
             {% if status %}
             <div class="ts-image is-medium">
-              <img src="{{ file_url }}">
+            <img src="data:image/png;base64,{{ file }}" alt="Processed Image">
             </div>
             {% endif %}
         </div>
@@ -82,6 +82,7 @@
             </p>
             <p>
                 <span class="ts-text">相似度：{{ similarity }} %</span>
+                <div class="ts-chip is-circular">咒語相似2</div>..
             </p>
             </div>
         {% else %}
