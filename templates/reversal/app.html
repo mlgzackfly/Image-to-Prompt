@@ -89,6 +89,31 @@
         {% endif %}
     </div>
 </div>
+
+    <div class="ts-space is-big"></div>
+    <div class="ts-header is-large">相似圖片</div>
+    <div class="ts-divider"></div>
+<div class="ts-space is-big"></div>
+
+                {% if status %}
+  <div class="ts-grid is-5-columns">
+    {% for img,p in img_prompts %}
+      {% if forloop.counter0|divisibleby:5 %}
+        </div>
+        <div class="ts-grid is-5-columns">
+      {% endif %}
+      <div class="column">
+        <div class="ts-box">
+          <div class="ts-image">
+            <img src="/static/images/kaggle/{{ img }}.png">
+          </div>
+          <div class="ts-content">{{ p }}</div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}
+
 </div>
 
 <div class="ts-space is-huge"></div>

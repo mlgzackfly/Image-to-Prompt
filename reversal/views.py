@@ -24,8 +24,8 @@ def app(request):
         query_image_id = file_url # 圖片位置
         top_k = 20 # 搜尋前幾名
         top_k_image_ids, top_k_similarities, top_k_prompts = similarity.get_similar_images(query_image_id, top_k)
-
-        return render(request, 'reversal/app.html', {'status' : True, 'message' : '上傳成功！','file': encoded_data,'prompt' : top_k_prompts[0],'similarity' : round(top_k_similarities[0],2)*100})
+        img_prompts = list(zip(top_k_image_ids, top_k_prompts))
+        return render(request, 'reversal/app.html', {'status' : True, 'message' : '上傳成功！','file': encoded_data,'prompt' : top_k_prompts, 'img_prompts': img_prompts, 'similarity' : round(top_k_similarities[0],2)*100})
     return render(request, 'reversal/app.html')
 
 
