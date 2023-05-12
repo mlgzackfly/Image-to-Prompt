@@ -36,30 +36,36 @@
 <div class="ts-container is-narrow">
 
 <div class="ts-grid">
-    <div class="column is-4-wide">
+    <div class="column is-5-wide">
+    <div class="ts-wrap is-vertical">
+        <div class="ts-box is-hollowed">
+            <div class="ts-content">
+                <input type="file" id="image-upload" name="image" style="display:none" accept=".png">
+                <div class="ts-center">
+                    <div class="ts-icon is-disabled is-heading is-upload-icon"></div>
+                    <div class="ts-space"></div>
+                    <div class="ts-header is-secondary">上傳圖片</div>
+                    <div class="ts-text is-secondary">將圖片拖拉至此處進行上傳</div>
+                </div>
+            </div>
+        </div>
 
-{#        <div class="ts-box is-hollowed">#}
-{#            <div class="ts-content is-vertically-padded">#}
-{#                <input type="file" id="image-upload" name="image" style="display:none">#}
-{#                <div class="ts-center">#}
-{#                    <div class="ts-icon is-disabled is-heading is-upload-icon"></div>#}
-{#                    <div class="ts-space"></div>#}
-{#                    <div class="ts-header is-secondary">上傳圖片</div>#}
-{#                    <div class="ts-text is-secondary">將圖片拖拉至此處進行上傳</div>#}
-{#                </div>#}
-{#            </div>#}
-{#        </div>#}
+        <div class="ts-divider is-center-text">或</div>
 
         <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
+            <div class="ts-center">
             <div class="ts-file">
                 <input type="file" name="upload" accept="image/*">
             </div>
-                <br>
+                <div class="ts-space"></div>
                 <button class="ts-button" type="submit">上傳</button>
-          </form>
+            </div>
+        </form>
+
     </div>
-    <div class="column is-8-wide">
+    </div>
+    <div class="column is-6-wide">
     <div class="ts-wrap is-center-aligned">
 
         <div class="row">
@@ -71,7 +77,7 @@
         </div>
     </div>
     </div>
-    <div class="column is-4-wide">
+    <div class="column is-5-wide">
         <div class="ts-header is-heavy">Prompt</div>
         <div class="ts-divider"></div>
 
@@ -81,7 +87,7 @@
             <span class="ts-text">{{ prompt }}</span>
             </p>
             <p>
-                <span class="ts-text">相似度：{{ similarity }} %</span>
+                <span class="ts-badge">相似度：{{ similarity }} %</span>
                 <div class="ts-chip is-circular">咒語相似2</div>..
             </p>
             </div>
