@@ -87,12 +87,15 @@
             <span class="ts-text">{{ prompt }}</span>
             </p>
             <p>
-                <span class="ts-badge">相似度：{{ similarity }} %</span>
-                <div class="ts-chip is-circular">咒語相似2</div>..
+{#                <span class="ts-badge">相似度：{{ similarity }} %</span>#}
+                {% for tag,count in tags %}
+                <div class="ts-chip is-circular">{{ tag }}</div>
+                {% endfor %}
+
             </p>
             </div>
         {% else %}
-            <span class="ts-text">這邊會顯示咒語</span>
+            <span class="ts-text"></span>
         {% endif %}
     </div>
 </div>
