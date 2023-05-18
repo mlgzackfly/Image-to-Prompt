@@ -89,7 +89,7 @@
             <p>
 {#                <span class="ts-badge">相似度：{{ similarity }} %</span>#}
                 {% for tag,count in tags %}
-                <div class="ts-chip is-circular">{{ tag }}</div>
+                <div class="ts-badge">{{ tag }}</div>
                 {% endfor %}
 
             </p>
@@ -108,7 +108,7 @@
                 {% if status %}
 <div class="ts-container is-narrow">
   <div class="ts-grid is-5-columns is-relaxed">
-    {% for img,p in img_prompts %}
+    {% for img,p,similarity in img_prompts %}
       {% if forloop.counter0|divisibleby:5 %}
         </div>
           <div class="ts-space"></div>
@@ -125,7 +125,11 @@
           </div>
           <div class="ts-content">
               <p>{{ p }}</p>
+              <div class="ts-wrap is-start-aligned">
+                <div class="ts-badge is-secondary">{% widthratio similarity 1 100 %} %</div>
+            </div>
           </div>
+        </label>
         </div>
       </div>
     {% endfor %}

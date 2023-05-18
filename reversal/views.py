@@ -29,7 +29,8 @@ def app(request):
         query_image_id = file_url # 圖片位置
         top_k = 10 # 搜尋前幾名
         top_k_image_ids, top_k_similarities, top_k_prompts = similarity.get_similar_images(query_image_id, top_k)
-        img_prompts = list(zip(top_k_image_ids, top_k_prompts))
+        # img_prompts = list(zip(top_k_image_ids, top_k_prompts))
+        img_prompts = list(zip(top_k_image_ids, top_k_prompts, top_k_similarities))
 
         # 取出所有 prompt 的單詞
         all_words = []
