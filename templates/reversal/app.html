@@ -117,7 +117,11 @@
       <div class="column">
         <div class="ts-box">
           <div class="ts-image is-small">
-            <img src="/static/images/kaggle/{{ img }}.png">
+            {% if var.img %}
+              <img src="/static/images/kaggle/{{ img }}.png">
+              {% else %}
+              <img src="/static/images/none.png">
+              {% endif %}
           </div>
           <div class="ts-content">
               <p>{{ p }}</p>
