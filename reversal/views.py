@@ -84,3 +84,7 @@ def clean_text(text):
 
 def about(request):
     return render(request, 'reversal/about.html')
+
+def prompt(request):
+
+    return render(request, 'reversal/prompt.html')
