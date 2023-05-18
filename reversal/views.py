@@ -1,5 +1,6 @@
 # Create your views here.
 import base64
+import os
 import tempfile
 from nltk.corpus import stopwords
 from collections import Counter
@@ -29,8 +30,8 @@ def app(request):
         query_image_id = file_url # 圖片位置
         top_k = 10 # 搜尋前幾名
         top_k_image_ids, top_k_similarities, top_k_prompts = similarity.get_similar_images(query_image_id, top_k)
-        # img_prompts = list(zip(top_k_image_ids, top_k_prompts))
-        img_prompts = list(zip(top_k_image_ids, top_k_prompts, top_k_similarities))
+        image_exists = [img if os.path.isfile(f'static/images/kaggle/{img}.png') else False for img in top_k_image_ids]
+        img_prompts = list(zip(image_exists, top_k_prompts, top_k_similarities))
 
         # 取出所有 prompt 的單詞
         all_words = []
