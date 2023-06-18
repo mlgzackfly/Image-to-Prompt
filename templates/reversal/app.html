@@ -1,5 +1,6 @@
 <html>
 {% load static %}
+
 <head>
     <title>術式反轉</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocas/4.2.3/tocas.min.css">
@@ -9,12 +10,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     {#    可愛字型#}
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link rel="preconnect" href="https:/fonts.gstatic.com" crossorigin/>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet"/>
     <script src="{% static 'js/upload.js' %}"></script>
-
-    <script src="https://unpkg.com/dropzone@6.0.0-beta.1/dist/dropzone-min.js"></script>
-    <link href="https://unpkg.com/dropzone@6.0.0-beta.1/dist/dropzone.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div class="ts-content is-secondary is-fitted">
@@ -22,6 +20,7 @@
         <div class="ts-tab">
             <a href="{% url 'reversal:index' %}" class="item">首頁</a>
             <a href="{% url 'reversal:app' %}" class="item is-active">開始使用</a>
+            <a href="{% url 'reversal:prompt' %}" class="item">文字比對</a>
             <a href="{% url 'reversal:about' %}" class="item">關於</a>
         </div>
     </div>
