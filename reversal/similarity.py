@@ -4,6 +4,9 @@ from PIL import Image
 import torch
 from torch.utils.data import Dataset
 from torchvision import transforms
+from sentence_transformers import SentenceTransformer
+
+import torch.nn.functional as F
 import timm
 
 class CFG:
@@ -91,3 +94,28 @@ def get_similar_images(query_image_id, top_k):
     top_k_similarities = similarities[top_k_idx].tolist()
 
     return top_k_image_ids, top_k_similarities, top_k_prompts
+
+
+def calculate_similarity(query_image_id, text):
+    # 取得查詢圖像的嵌入向量
+    query_image_path = f"{query_image_id}"
+    query_embedding = predict(query_image_path, CFG.model_path, CFG.model_name, CFG.input_size)
+
+    # 正規化特徵向量
+    query_embedding_norm = np.linalg.norm(query_embedding)
+    query_embedding_normed = query_embedding / query_embedding_norm
+
+    model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
+    text_embedding = model.encode(text)
+
+    image_embedding = torch.Tensor(query_embedding_normed).unsqueeze(0)
+    text_embedding = torch.Tensor(text_embedding).unsqueeze(0)
+
+    # 正規化特徵向量
+    image_embedding_norm = F.normalize(image_embedding, p=2, dim=1)
+    text_embedding_norm = F.normalize(text_embedding, p=2, dim=1)
+
+    # 計算餘弦相似度
+    similarity = F.cosine_similarity(image_embedding_norm, text_embedding_norm, dim=1)
+    similarity = round(similarity.item() * 100,2)
+    return similarity

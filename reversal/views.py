@@ -87,5 +87,19 @@ def about(request):
     return render(request, 'reversal/about.html')
 
 def prompt(request):
+    if request.method == 'POST' and request.FILES.get('upload'):
+        user_prompt = request.POST['prompt']
+        upload = request.FILES.get('upload')
+        with tempfile.NamedTemporaryFile(delete=False) as temp_file:
+            temp_file.write(upload.read())
+        file_url = temp_file.name
 
+        with open(file_url, 'rb') as f:
+            encoded_data = base64.b64encode(f.read()).decode('utf-8')
+
+        query_image_id = file_url # 圖片位置
+        resultSimilarity = similarity.calculate_similarity(query_image_id,user_prompt)
+        print(type(resultSimilarity))
+
+        return render(request, 'reversal/prompt.html', {'status' : True, 'message' : '上傳成功！','file': encoded_data, 'user_prompt': user_prompt, 'similarity' : resultSimilarity})
     return render(request, 'reversal/prompt.html')
