@@ -37,17 +37,21 @@
 <div class="ts-grid">
     <div class="column is-5-wide">
     <div class="ts-wrap is-vertical">
-        <div class="ts-box is-hollowed">
+        <form action="{% url 'reversal:app' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+        <div class="ts-box is-hollowed" id="upload-image">
             <div class="ts-content">
-                <input type="file" id="image-upload" name="image" style="display:none" accept=".png">
                 <div class="ts-center">
                     <div class="ts-icon is-disabled is-heading is-upload-icon"></div>
                     <div class="ts-space"></div>
+                    <input type="file" name="upload" style="display:none">
                     <div class="ts-header is-secondary">上傳圖片</div>
-                    <div class="ts-text is-secondary">將圖片拖拉至此處進行上傳</div>
+                    <div class="ts-text is-secondary dz-message">將圖片拖拉至此處進行上傳</div>
                 </div>
             </div>
         </div>
+        </form>
+
 
         <div class="ts-divider is-center-text">或</div>
 
