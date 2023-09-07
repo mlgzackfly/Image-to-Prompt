@@ -1,4 +1,4 @@
-# kaikaikitan
+# Image to Prompt
 
 This Django project is designed to allow users to upload AI-generated images and then provide text prompts that could have led to the image's creation.
 
