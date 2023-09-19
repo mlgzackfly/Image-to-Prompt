@@ -34,92 +34,94 @@
 
 
 <div class="ts-container is-narrow">
-<div class="ts-header is-large is-start-icon">
-    <span class="ts-icon is-file-lines-icon"></span>
-    關於
-</div>
+    <div class="ts-header is-large is-start-icon">
+        <span class="ts-icon is-file-lines-icon"></span>
+        關於
+    </div>
     <div class="ts-space"></div>
     <div class="ts-box">
 
-<div class="ts-content">
-    <p class="ts-text">
-        近年來，隨著人工智慧技術的發展，透過文字提示生成圖片的方法愈加普及。這些生成的圖片十分出色，但若要進一步了解圖片生成的過程，是否能夠從圖片出發反推出對應的文字提示呢？
-    </p>
-    <p class="ts-text">
-        這是一個圖片反向搜尋的程式，使用 DiffusionDB 2M 儲存圖片的嵌入向量，透過比對與使用者輸入的圖片，找到最相似的圖片。透過讀取儲存於資料庫中的圖片嵌入向量資料框，使用餘弦相似度計算資料集所有圖片與使用者上傳的圖片的相似度，取前幾個相似度最高的圖片並根據相應的圖片 ID、相似度和文字提示做進一步的估計。
-    </p>
-</div>
-    <div class="symbol">
-        <span class="ts-icon is-circle-info-icon"></span>
+        <div class="ts-content">
+            <p class="ts-text">
+                近年來，隨著人工智慧技術的發展，透過文字提示生成圖片的方法愈加普及。這些生成的圖片十分出色，但若要進一步了解圖片生成的過程，是否能夠從圖片出發反推出對應的文字提示呢？
+            </p>
+            <p class="ts-text">
+                這是一個圖片反向搜尋的程式，使用 DiffusionDB 2M
+                儲存圖片的嵌入向量，透過比對與使用者輸入的圖片，找到最相似的圖片。透過讀取儲存於資料庫中的圖片嵌入向量資料框，使用餘弦相似度計算資料集所有圖片與使用者上傳的圖片的相似度，取前幾個相似度最高的圖片並根據相應的圖片
+                ID、相似度和文字提示做進一步的估計。
+            </p>
+        </div>
+        <div class="symbol">
+            <span class="ts-icon is-circle-info-icon"></span>
+        </div>
     </div>
-</div>
 
-<div class="ts-space is-large"></div>
+    <div class="ts-space is-large"></div>
 
-<div class="ts-header is-large is-start-icon">
-    <span class="ts-icon is-user-group-icon"></span>
-    組員
-</div>
+    <div class="ts-header is-large is-start-icon">
+        <span class="ts-icon is-user-group-icon"></span>
+        組員
+    </div>
     <div class="ts-space"></div>
 
 
-<div class="ts-grid mobile:is-stacked">
-    <div class="column is-4-wide">
-        <div class="ts-center">
-            <div class="ts-image is-covered is-circular is-big">
-                <img src="{% static 'profile/IMG_8337.png' %}" style="height: 150px; width: 150px;">
+    <div class="ts-grid mobile:is-stacked">
+        <div class="column is-4-wide">
+            <div class="ts-center">
+                <div class="ts-image is-covered is-circular is-big">
+                    <img src="{% static 'profile/IMG_8337.png' %}" style="height: 150px; width: 150px;">
+                </div>
+                <div class="ts-content">
+                    <div class="ts-header is-heavy">黃昱翔 / 程式設計</div>
+                    <p>ML 要把我搞死了</p>
+                </div>
             </div>
-            <div class="ts-content">
-                <div class="ts-header is-heavy">黃昱翔 / 程式設計</div>
-                <p>ML 要把我搞死了</p>
+        </div>
+        <div class="column is-4-wide">
+            <div class="ts-center">
+                <div class="ts-image is-covered is-circular is-big">
+                    <img src="{% static 'profile/IMG_8337.png' %}" style="height: 150px; width: 150px;">
+                </div>
+                <div class="ts-content">
+                    <div class="ts-header is-heavy">黃昱翔 / 網站製作</div>
+                    <p>UI 好難刻⋯⋯</p>
+                </div>
+            </div>
+        </div>
+        <div class="column is-4-wide">
+            <div class="ts-center">
+                <div class="ts-image is-covered is-circular is-big">
+                    <img src="{% static 'profile/IMG_8337.png' %}" style="height: 150px; width: 150px;">
+                </div>
+                <div class="ts-content">
+                    <div class="ts-header is-heavy">黃昱翔 / 美術設計</div>
+                    <p>我是大藝術家</p>
+                </div>
+            </div>
+        </div>
+        <div class="column is-4-wide">
+            <div class="ts-center">
+                <div class="ts-image is-covered is-circular is-big">
+                    <img src="{% static 'profile/IMG_8337.png' %}" style="height: 150px; width: 150px;">
+                </div>
+                <div class="ts-content">
+                    <div class="ts-header is-heavy">黃昱翔 / 簡報製作</div>
+                    <p>簡簡單單的做</p>
+                </div>
+            </div>
+        </div>
+        <div class="column is-4-wide">
+            <div class="ts-center">
+                <div class="ts-image is-covered is-circular is-big">
+                    <img src="{% static 'profile/IMG_8337.png' %}" style="height: 150px; width: 150px;">
+                </div>
+                <div class="ts-content">
+                    <div class="ts-header is-heavy">黃昱翔 / 書面報告</div>
+                    <p>報告</p>
+                </div>
             </div>
         </div>
     </div>
-    <div class="column is-4-wide">
-        <div class="ts-center">
-            <div class="ts-image is-covered is-circular is-big">
-                <img src="{% static 'profile/IMG_8337.png' %}" style="height: 150px; width: 150px;">
-            </div>
-            <div class="ts-content">
-                <div class="ts-header is-heavy">黃昱翔 / 網站製作</div>
-                <p>UI 好難刻⋯⋯</p>
-            </div>
-        </div>
-    </div>
-    <div class="column is-4-wide">
-        <div class="ts-center">
-            <div class="ts-image is-covered is-circular is-big">
-                <img src="{% static 'profile/IMG_8337.png' %}" style="height: 150px; width: 150px;">
-            </div>
-            <div class="ts-content">
-                <div class="ts-header is-heavy">黃昱翔 / 美術設計</div>
-                <p>我是大藝術家</p>
-            </div>
-        </div>
-    </div>
-    <div class="column is-4-wide">
-        <div class="ts-center">
-            <div class="ts-image is-covered is-circular is-big">
-                <img src="{% static 'profile/IMG_8337.png' %}" style="height: 150px; width: 150px;">
-            </div>
-            <div class="ts-content">
-                <div class="ts-header is-heavy">黃昱翔 / 簡報製作</div>
-                <p>簡簡單單的做</p>
-            </div>
-        </div>
-    </div>
-    <div class="column is-4-wide">
-        <div class="ts-center">
-            <div class="ts-image is-covered is-circular is-big">
-                <img src="{% static 'profile/IMG_8337.png' %}" style="height: 150px; width: 150px;">
-            </div>
-            <div class="ts-content">
-                <div class="ts-header is-heavy">黃昱翔 / 書面報告</div>
-                <p>報告</p>
-            </div>
-        </div>
-    </div>
-</div>
 </div>
 
 

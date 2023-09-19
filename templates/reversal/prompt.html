@@ -32,66 +32,66 @@
 <div class="ts-divider"></div>
 <div class="ts-space is-big"></div>
 <div class="ts-container is-narrow">
-<form method="post" enctype="multipart/form-data">
-            {% csrf_token %}
-<div class="ts-grid">
-    <div class="column is-5-wide">
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="ts-grid">
+            <div class="column is-5-wide">
 
-    <div class="ts-wrap is-vertical">
-{#        <div class="ts-divider is-center-text">或</div>#}
-            <div class="ts-center">
-            <div class="ts-file">
-                <input type="file" name="upload" accept=".png">
-            </div>
-                <div class="ts-space"></div>
-                  <button class="ts-button" type="submit">上傳</button>
-            </div>
+                <div class="ts-wrap is-vertical">
+                    {#        <div class="ts-divider is-center-text">或</div>#}
+                    <div class="ts-center">
+                        <div class="ts-file">
+                            <input type="file" name="upload" accept=".png">
+                        </div>
+                        <div class="ts-space"></div>
+                        <button class="ts-button" type="submit">上傳</button>
+                    </div>
 
 
-    </div>
-    </div>
-    <div class="column is-6-wide">
-        {% if status %}
-            <div class="ts-row is-center-aligned">
-            <div class="ts-gauge is-circular is-large">
-                <div class="bar" style="--value: {{ similarity }};">
-                    <div class="text">{{ similarity }}%</div>
                 </div>
             </div>
-            </div>
-        {% endif %}
-        <div>
+            <div class="column is-6-wide">
+                {% if status %}
+                    <div class="ts-row is-center-aligned">
+                        <div class="ts-gauge is-circular is-large">
+                            <div class="bar" style="--value: {{ similarity }};">
+                                <div class="text">{{ similarity }}%</div>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+                <div>
 
-        </div>
-    </div>
-    <div class="column is-5-wide">
-        <div class="ts-header is-heavy">Prompt</div>
-        <div class="ts-divider"></div>
-        <div class="ts-space"></div>
-        <div class="ts-input is-resizable">
-            <textarea name="prompt" placeholder="輸入 Prompt" required></textarea>
-        </div>
-    </div>
-</div>
-</form>
-<div class="ts-space is-big"></div>
-{% if status %}
-<div class="ts-row is-center-aligned">
-<div class="ts-divider"></div>
-<div class="ts-divider"></div>
-<div class="ts-image" style="max-width: 450px;">
-    <img src="data:image/png;base64,{{ file }}" alt="Prompt and Image">
-    <div class="ts-mask is-bottom">
-        <div class="ts-content" style="color: #FFF;">
-            <div class="ts-text is-truncated" style="max-width: 300px;">
-            <div class="ts-header">Prompt</div>
-            {{ user_prompt }}
+                </div>
+            </div>
+            <div class="column is-5-wide">
+                <div class="ts-header is-heavy">Prompt</div>
+                <div class="ts-divider"></div>
+                <div class="ts-space"></div>
+                <div class="ts-input is-resizable">
+                    <textarea name="prompt" placeholder="輸入 Prompt" required></textarea>
+                </div>
             </div>
         </div>
-    </div>
-</div>
-</div>
-{% endif %}
+    </form>
+    <div class="ts-space is-big"></div>
+    {% if status %}
+        <div class="ts-row is-center-aligned">
+            <div class="ts-divider"></div>
+            <div class="ts-divider"></div>
+            <div class="ts-image" style="max-width: 450px;">
+                <img src="data:image/png;base64,{{ file }}" alt="Prompt and Image">
+                <div class="ts-mask is-bottom">
+                    <div class="ts-content" style="color: #FFF;">
+                        <div class="ts-text is-truncated" style="max-width: 300px;">
+                            <div class="ts-header">Prompt</div>
+                            {{ user_prompt }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
 </div>
 
 <div class="ts-space is-huge"></div>
