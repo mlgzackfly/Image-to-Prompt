@@ -18,8 +18,8 @@ def index(request):
 def app(request):
     if request.method == 'POST' and request.FILES['upload']:
         upload = request.FILES['upload']
-        if not upload.name.endswith('.png'):
-            return render(request, 'reversal/app.html',{'status' : False, 'message' : '只能上傳副檔名為 png 的圖片'})
+        # if not upload.name.endswith('.png'):
+        #     return render(request, 'reversal/app.html',{'status' : False, 'message' : '只能上傳副檔名為 png 的圖片'})
         with tempfile.NamedTemporaryFile(delete=False) as temp_file:
             temp_file.write(upload.read())
         file_url = temp_file.name
