@@ -7,6 +7,7 @@ from collections import Counter
 import re
 import string
 import nltk
+import random
 from django.shortcuts import render
 from datasets import load_dataset
 from . import similarity
@@ -49,11 +50,13 @@ def app(request):
             sentences = []
             for prompt in top_k_prompts:
                 words = clean_text(prompt)
+                random.shuffle(words)  # 隨機打亂單詞的順序
                 sentence = ' '.join(words)
                 sentences.append(sentence)
 
-            # 取前 n 句組成新的句子
+            # 隨機選取 n 句組成新的句子
             n = 3
+            random.shuffle(sentences)  # 隨機打亂句子的順序
             new_sentence = ' '.join(sentences[:n])
 
             # 輸出最常出現的單詞
